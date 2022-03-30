@@ -1,0 +1,71 @@
+[
+    {
+        "package": "swift-standard-library",
+        "include":
+        [
+            "swift"
+        ],
+        "targets": 
+        [
+            "Swift", 
+            "Dispatch", 
+            "_Distributed", 
+            "_StringProcessing", 
+            "_Concurrency", 
+            "_Differentiation", 
+            "_MatchingEngine"
+        ]
+    },
+    {
+        "package": "swift-nio",
+        "include":
+        [
+            "swift-nio"
+        ], 
+        "targets": 
+        [
+            "NIOCore",
+            "NIOConcurrencyHelpers",
+            "NIOEmbedded",
+            "NIOHTTP1",
+            "NIOPosix",
+            "NIOTLS",
+            "NIOWebSocket"
+        ]
+    },
+    {
+        "package": "swift-system",
+        "include":
+        [
+            "swift-system"
+        ], 
+        "targets": 
+        [
+            "SystemPackage"
+        ]
+    },
+    {
+        "package": "swift-markdown",
+        "include":
+        [
+            "swift-markdown"
+        ], 
+        "targets": 
+        [
+            "Markdown"
+        ]
+    },
+    {
+        "package": "swift-syntax",
+        "include":
+        [
+            "swift-syntax"
+        ], 
+        "targets": 
+        [
+            "SwiftSyntax",
+            "SwiftSyntaxParser",
+            "SwiftSyntaxBuilder"
+        ]
+    }
+]
