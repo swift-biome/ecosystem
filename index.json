@@ -1,28 +1,31 @@
 [
     {
+        "format": "docc",
         "package": "swift-standard-library",
         "include":
         [
             "swift"
         ],
-        "targets": 
+        "modules": 
         [
             "Swift", 
             "Dispatch", 
-            "_Distributed", 
-            "_StringProcessing", 
+            "Distributed", 
             "_Concurrency", 
             "_Differentiation", 
-            "_MatchingEngine"
+            "_MatchingEngine",
+            "_RegexParser",
+            "_StringProcessing"
         ]
     },
     {
+        "format": "docc",
         "package": "swift-nio",
         "include":
         [
             "swift-nio"
         ], 
-        "targets": 
+        "modules": 
         [
             "NIOCore",
             "NIOConcurrencyHelpers",
@@ -34,38 +37,65 @@
         ]
     },
     {
+        "format": "docc",
         "package": "swift-system",
         "include":
         [
             "swift-system"
         ], 
-        "targets": 
+        "modules": 
         [
             "SystemPackage"
         ]
     },
     {
+        "format": "docc",
         "package": "swift-markdown",
         "include":
         [
             "swift-markdown"
         ], 
-        "targets": 
+        "modules": 
         [
             "Markdown"
         ]
     },
     {
+        "format": "docc",
         "package": "swift-syntax",
         "include":
         [
             "swift-syntax"
         ], 
-        "targets": 
+        "modules": 
         [
             "SwiftSyntax",
             "SwiftSyntaxParser",
             "SwiftSyntaxBuilder"
+        ]
+    },
+    {
+        "format": "entrapta",
+        "package": "swift-grammar",
+        "include":
+        [
+            "swift-grammar"
+        ], 
+        "modules": 
+        [
+            "Grammar"
+        ]
+    },
+    {
+        "format": "entrapta",
+        "package": "swift-json",
+        "include":
+        [
+            "swift-json"
+        ], 
+        "modules": 
+        [
+            "JSON"
         ]
     }
 ]

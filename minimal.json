@@ -1,0 +1,15 @@
+[
+    {
+        "package": "swift-standard-library",
+        "format": "docc",
+        "include":
+        [
+            "swift"
+        ],
+        "modules": 
+        [
+            "Swift", 
+            "_Concurrency"
+        ]
+    }
+]
