@@ -1,0 +1,287 @@
+#!/usr/bin/python3
+
+import os, subprocess, shutil, glob, json
+
+class semver:
+    def __init__(self, string):
+        self.version = string
+    
+    def __str__(self): 
+        return self.version
+
+class swift:
+    def __init__(self, string):
+        self.version = string
+    
+    def __str__(self): 
+        return 'swift-' + self.version
+
+manifest = '''\
+// swift-tools-version:5.7
+import PackageDescription
+
+let package:Package = .init(
+    name: "consumer",
+    products: 
+    [
+        .library(name: "_Consumer", targets: ["_Consumer"])
+    ],
+    dependencies: 
+    [
+        .package(url: "https://github.com/swift-biome/swift-documentation-extract", from: "0.2.0"),
+        .package(url: "{url}", {tag}),
+    ],
+    targets: 
+    [
+        .target(name: "_Consumer", 
+            dependencies: 
+            [
+                {dependencies}
+            ],
+            path: "{sources}", 
+            exclude: 
+            [
+            ]),
+    ]
+)
+'''
+
+def load_manifest():
+    if os.path.exists('Package.swift'):
+        with open('Package.swift', 'r') as file:
+            return file.read()
+    return None
+
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
+workspace = 'packages'
+
+os.makedirs(workspace, exist_ok = True)
+os.chdir(workspace)
+
+builds = '.builds'
+os.makedirs(builds, exist_ok = True)
+
+for organization, package, tags in (
+        (
+            'https://github.com/kelvin13', 'swift-grammar', 
+            (
+                (
+                    semver('0.1.5'), 
+                    (
+                        'Grammar',
+                    ),
+                    ()
+                ),
+            )
+        ),
+        (
+            'https://github.com/kelvin13', 'swift-json', 
+            (
+                (
+                    semver('0.2.2'), 
+                    (
+                        'JSON',
+                    ),
+                    ()
+                ),
+            )
+        ),
+        (
+            'https://github.com/apple', 'swift-system', 
+            (
+                (
+                    semver('1.1.0'), 
+                    (
+                        'SystemPackage',
+                    ),
+                    ()
+                ),
+                (
+                    semver('1.1.1'), 
+                    (
+                        'SystemPackage',
+                    ),
+                    ()
+                ),
+                (
+                    semver('1.2.0'), 
+                    (
+                        'SystemPackage',
+                    ),
+                    ()
+                ),
+                (
+                    semver('1.2.1'), 
+                    (
+                        'SystemPackage',
+                    ),
+                    ()
+                ),
+            )
+        ),
+        (
+            'https://github.com/apple', 'swift-nio', 
+            (
+                (
+                    semver('2.38.0'), 
+                    (
+                        'NIO',
+                        'NIOCore',
+                        'NIOConcurrencyHelpers',
+                        'NIOEmbedded',
+                        'NIOHTTP1',
+                        'NIOPosix',
+                        'NIOTLS',
+                        'NIOWebSocket',
+                    ),
+                    (
+                        '_NIODataStructures',
+                    )
+                ),
+                (
+                    semver('2.39.0'), 
+                    (
+                        'NIO',
+                        'NIOCore',
+                        'NIOConcurrencyHelpers',
+                        'NIOEmbedded',
+                        'NIOHTTP1',
+                        'NIOPosix',
+                        'NIOTLS',
+                        'NIOWebSocket',
+                    ),
+                    (
+                        '_NIODataStructures',
+                    )
+                ),
+                (
+                    semver('2.40.0'), 
+                    (
+                        'NIO',
+                        'NIOCore',
+                        'NIOConcurrencyHelpers',
+                        'NIOEmbedded',
+                        'NIOHTTP1',
+                        'NIOPosix',
+                        'NIOTLS',
+                        'NIOWebSocket',
+                    ),
+                    (
+                        '_NIODataStructures',
+                    )
+                ),
+            )
+        ),
+        (
+            'https://github.com/apple', 'swift-syntax', 
+            (
+                (
+                    swift('DEVELOPMENT-SNAPSHOT-2022-03-13-a'), 
+                    (
+                        'SwiftSyntax',
+                        'SwiftSyntaxParser',
+                        'SwiftSyntaxBuilder',
+                    ),
+                    ()
+                ),
+                (
+                    swift('DEVELOPMENT-SNAPSHOT-2022-06-20-a'), 
+                    (
+                        'SwiftSyntax',
+                        'SwiftSyntaxParser',
+                        'SwiftSyntaxBuilder',
+                    ),
+                    ()
+                ),
+            )
+        ),
+        (
+            'https://github.com/apple', 'swift-markdown',
+            (
+                (
+                    swift('DEVELOPMENT-SNAPSHOT-2022-03-13-a'), 
+                    (
+                        'Markdown',
+                    ),
+                    ()
+                ),
+                (
+                    swift('DEVELOPMENT-SNAPSHOT-2022-06-20-a'), 
+                    (
+                        'Markdown',
+                    ),
+                    ()
+                ),
+            )
+        ),
+    ):
+    for (tag, products, targets) in tags:
+        os.chdir(builds)
+        
+        modules = products + targets
+        pinned = '{0}@{1}'.format(package, tag)
+        
+        dependencies = ','.join('.product(name: "{0}", package: "{1}")'
+            .format(product, package) for product in products)
+        
+        os.makedirs(pinned, exist_ok = True)
+        os.chdir(pinned)
+        
+        sources = 'sources'
+        if not os.path.exists(sources):
+            os.mkdir(sources)
+            with open(os.path.join(sources, '_consumer.swift'), 'w') as file:
+                file.write('\n')
+        
+        old_manifest = load_manifest()
+        new_manifest = manifest.format(url = '{0}/{1}'.format(organization, package), 
+            tag =   'exact: "{0}"'.format(tag) if type(tag) is semver else 
+                    'revision: "{0}"'.format(tag), 
+            sources = sources, 
+            dependencies = dependencies)
+        
+        if old_manifest != new_manifest:
+            with open('Package.swift', 'w') as file:
+                file.write(new_manifest)
+        
+        for module in modules:
+            subprocess.run(('swift', 'build', '--target', module))
+        
+        output = subprocess.run(('swift', 'package', 'catalog', * modules ), 
+            capture_output = True)
+        
+        os.chdir('..')
+        os.chdir('..')
+        
+        if os.path.exists(pinned):
+            shutil.rmtree(pinned)
+        os.makedirs(pinned)
+        
+        if output.returncode == 0:
+            text = output.stdout.decode('utf-8')
+            catalog = json.loads(text)
+            for package_catalog in catalog:
+                assert package_catalog['catalog_tools_version'] == 2 
+                assert package_catalog['package'] == package 
+                for module_catalog in package_catalog['modules']:
+                    # move the files/directories in the include paths
+                    destinations = tuple(os.path.basename(path)
+                        for path in module_catalog['include'])
+                    for source, destination in zip(module_catalog['include'], destinations):
+                        shutil.copytree(source, os.path.join(pinned, destination))
+                    module_catalog['include'] = destinations
+            text = json.dumps(catalog, indent = 4, sort_keys = True)            
+            
+            with open(os.path.join(pinned, 'Package.catalog'), 'w') as file:
+                file.write(text) 
+            
+            shutil.copyfile(os.path.join(builds, pinned, 'Package.resolved'), 
+                os.path.join(pinned, 'Package.resolved'))
+            
+            print('generated documentation for {0}'.format(pinned))
+        else:
+            print(output.stderr.decode('utf-8'))
+            print('failed to generate documentation for {0}'.format(pinned))
+        
+        
+        

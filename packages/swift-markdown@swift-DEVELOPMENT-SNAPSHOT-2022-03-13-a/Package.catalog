@@ -1,0 +1,16 @@
+[
+    {
+        "catalog_tools_version": 2,
+        "modules": [
+            {
+                "dependencies": [],
+                "include": [
+                    "Markdown.docc",
+                    "Markdown"
+                ],
+                "module": "Markdown"
+            }
+        ],
+        "package": "swift-markdown"
+    }
+]

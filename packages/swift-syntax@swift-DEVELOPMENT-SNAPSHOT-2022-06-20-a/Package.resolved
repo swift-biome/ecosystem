@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "swift-documentation-extract",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/swift-biome/swift-documentation-extract",
+      "state" : {
+        "revision" : "23531d425ce2fc4be42a50dda152a6a8c3d6e4dd",
+        "version" : "0.2.0"
+      }
+    },
+    {
+      "identity" : "swift-syntax",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-syntax",
+      "state" : {
+        "branch" : "swift-DEVELOPMENT-SNAPSHOT-2022-06-20-a",
+        "revision" : "0772ed3b1213d695fde9b513c7ed80045509a931"
+      }
+    }
+  ],
+  "version" : 2
+}
