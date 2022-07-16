@@ -1,5 +1,6 @@
 [
     {
+        "brand": "SwiftJSON",
         "catalog_tools_version": 2,
         "modules": [
             {

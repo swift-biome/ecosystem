@@ -52,6 +52,13 @@ def load_manifest():
             return file.read()
     return None
 
+toolchain = os.path.join(os.environ['SWIFTENV_ROOT'], 
+    'versions', 
+    'DEVELOPMENT-SNAPSHOT-2022-06-20-a', 
+    'usr', 
+    'bin', 
+    'swift')
+
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 workspace = 'packages'
 
@@ -61,10 +68,17 @@ os.chdir(workspace)
 builds = '.builds'
 os.makedirs(builds, exist_ok = True)
 
-for organization, package, tags in (
+for organization, package, brand, tags in (
         (
-            'https://github.com/kelvin13', 'swift-grammar', 
+            'https://github.com/kelvin13', 'swift-grammar', 'SwiftGrammar',
             (
+                (
+                    semver('0.1.4'), 
+                    (
+                        'Grammar',
+                    ),
+                    ()
+                ),
                 (
                     semver('0.1.5'), 
                     (
@@ -75,7 +89,7 @@ for organization, package, tags in (
             )
         ),
         (
-            'https://github.com/kelvin13', 'swift-json', 
+            'https://github.com/kelvin13', 'swift-json', 'SwiftJSON',
             (
                 (
                     semver('0.2.2'), 
@@ -87,7 +101,7 @@ for organization, package, tags in (
             )
         ),
         (
-            'https://github.com/apple', 'swift-system', 
+            'https://github.com/apple', 'swift-system', 'SwiftSystem',
             (
                 (
                     semver('1.1.0'), 
@@ -120,7 +134,7 @@ for organization, package, tags in (
             )
         ),
         (
-            'https://github.com/apple', 'swift-nio', 
+            'https://github.com/apple', 'swift-nio', 'SwiftNIO',
             (
                 (
                     semver('2.38.0'), 
@@ -173,7 +187,7 @@ for organization, package, tags in (
             )
         ),
         (
-            'https://github.com/apple', 'swift-syntax', 
+            'https://github.com/apple', 'swift-syntax', 'SwiftSyntax',
             (
                 (
                     swift('DEVELOPMENT-SNAPSHOT-2022-03-13-a'), 
@@ -196,7 +210,7 @@ for organization, package, tags in (
             )
         ),
         (
-            'https://github.com/apple', 'swift-markdown',
+            'https://github.com/apple', 'swift-markdown', 'SwiftMarkdown',
             (
                 (
                     swift('DEVELOPMENT-SNAPSHOT-2022-03-13-a'), 
@@ -245,9 +259,9 @@ for organization, package, tags in (
                 file.write(new_manifest)
         
         for module in modules:
-            subprocess.run(('swift', 'build', '--target', module))
+            subprocess.run((toolchain, 'build', '--target', module))
         
-        output = subprocess.run(('swift', 'package', 'catalog', * modules ), 
+        output = subprocess.run((toolchain, 'package', 'catalog', * modules ), 
             capture_output = True)
         
         os.chdir('..')
@@ -263,6 +277,10 @@ for organization, package, tags in (
             for package_catalog in catalog:
                 assert package_catalog['catalog_tools_version'] == 2 
                 assert package_catalog['package'] == package 
+                
+                if 'brand' not in package_catalog:
+                    package_catalog['brand'] = brand 
+                
                 for module_catalog in package_catalog['modules']:
                     # move the files/directories in the include paths
                     destinations = tuple(os.path.basename(path)
