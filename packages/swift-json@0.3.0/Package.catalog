@@ -1,0 +1,24 @@
+[
+    {
+        "brand": "Swift JSON",
+        "catalog_tools_version": 2,
+        "modules": [
+            {
+                "dependencies": [
+                    {
+                        "modules": [
+                            "Grammar"
+                        ],
+                        "package": "swift-grammar"
+                    }
+                ],
+                "include": [
+                    "json.docc",
+                    "JSON"
+                ],
+                "module": "JSON"
+            }
+        ],
+        "package": "swift-json"
+    }
+]

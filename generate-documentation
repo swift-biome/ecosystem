@@ -70,7 +70,7 @@ os.makedirs(builds, exist_ok = True)
 
 for organization, package, brand, tags in (
         (
-            'https://github.com/kelvin13', 'swift-grammar', 'SwiftGrammar',
+            'https://github.com/kelvin13', 'swift-grammar', 'Swift Grammar',
             (
                 (
                     semver('0.1.4'), 
@@ -89,10 +89,17 @@ for organization, package, brand, tags in (
             )
         ),
         (
-            'https://github.com/kelvin13', 'swift-json', 'SwiftJSON',
+            'https://github.com/kelvin13', 'swift-json', 'Swift JSON',
             (
                 (
                     semver('0.2.2'), 
+                    (
+                        'JSON',
+                    ),
+                    ()
+                ),
+                (
+                    'd9ec933b8e98905b68e90036faaadafb116f973c', 
                     (
                         'JSON',
                     ),
@@ -210,7 +217,7 @@ for organization, package, brand, tags in (
             )
         ),
         (
-            'https://github.com/apple', 'swift-markdown', 'SwiftMarkdown',
+            'https://github.com/apple', 'swift-markdown', 'Swift Markdown',
             (
                 (
                     swift('DEVELOPMENT-SNAPSHOT-2022-03-13-a'), 

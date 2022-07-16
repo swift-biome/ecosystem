@@ -1,0 +1,32 @@
+{
+  "pins" : [
+    {
+      "identity" : "swift-documentation-extract",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/swift-biome/swift-documentation-extract",
+      "state" : {
+        "revision" : "23531d425ce2fc4be42a50dda152a6a8c3d6e4dd",
+        "version" : "0.2.0"
+      }
+    },
+    {
+      "identity" : "swift-grammar",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/kelvin13/swift-grammar",
+      "state" : {
+        "revision" : "272964fcecfff8b4181251bc9ff8bf76ecacbf57",
+        "version" : "0.1.5"
+      }
+    },
+    {
+      "identity" : "swift-json",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/kelvin13/swift-json",
+      "state" : {
+        "revision" : "d9ec933b8e98905b68e90036faaadafb116f973c",
+        "version" : "0.3.0"
+      }
+    }
+  ],
+  "version" : 2
+}
