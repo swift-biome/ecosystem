@@ -1,0 +1,28 @@
+[
+    {
+        "brand": "Swift BSON",
+        "catalog_tools_version": 2,
+        "modules": [
+            {
+                "dependencies": [
+                    {
+                        "modules": [
+                            "NIO",
+                            "NIOConcurrencyHelpers",
+                            "NIOCore",
+                            "NIOEmbedded",
+                            "NIOPosix",
+                            "_NIODataStructures"
+                        ],
+                        "package": "swift-nio"
+                    }
+                ],
+                "include": [
+                    "BSON"
+                ],
+                "module": "BSON"
+            }
+        ],
+        "package": "bson"
+    }
+]

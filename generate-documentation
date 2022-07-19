@@ -1,20 +1,7 @@
 #!/usr/bin/python3
 
 import os, subprocess, shutil, glob, json
-
-class semver:
-    def __init__(self, string):
-        self.version = string
-    
-    def __str__(self): 
-        return self.version
-
-class swift:
-    def __init__(self, string):
-        self.version = string
-    
-    def __str__(self): 
-        return 'swift-' + self.version
+import index
 
 manifest = '''\
 // swift-tools-version:5.7
@@ -28,7 +15,7 @@ let package:Package = .init(
     ],
     dependencies: 
     [
-        .package(url: "https://github.com/swift-biome/swift-documentation-extract", from: "0.2.0"),
+        .package(url: "https://github.com/kelvin13/swift-package-catalog", from: "0.2.1"),
         .package(url: "{url}", {tag}),
     ],
     targets: 
@@ -46,9 +33,9 @@ let package:Package = .init(
 )
 '''
 
-def load_manifest():
-    if os.path.exists('Package.swift'):
-        with open('Package.swift', 'r') as file:
+def read_file(path):
+    if os.path.exists(path):
+        with open(path, 'r') as file:
             return file.read()
     return None
 
@@ -68,253 +55,7 @@ os.chdir(workspace)
 builds = '.builds'
 os.makedirs(builds, exist_ok = True)
 
-for organization, package, brand, tags in (
-        (
-            'https://github.com/kelvin13', 'swift-grammar', 'Swift Grammar',
-            (
-                (
-                    semver('0.1.4'), 
-                    (
-                        'Grammar',
-                    ),
-                    ()
-                ),
-                (
-                    semver('0.1.5'), 
-                    (
-                        'Grammar',
-                    ),
-                    ()
-                ),
-            )
-        ),
-        (
-            'https://github.com/kelvin13', 'swift-json', 'Swift JSON',
-            (
-                (
-                    semver('0.2.2'), 
-                    (
-                        'JSON',
-                    ),
-                    ()
-                ),
-                (
-                    'd9ec933b8e98905b68e90036faaadafb116f973c', 
-                    (
-                        'JSON',
-                    ),
-                    ()
-                ),
-            )
-        ),
-        (
-            'https://github.com/apple', 'swift-system', 'SwiftSystem',
-            (
-                (
-                    semver('1.1.0'), 
-                    (
-                        'SystemPackage',
-                    ),
-                    ()
-                ),
-                (
-                    semver('1.1.1'), 
-                    (
-                        'SystemPackage',
-                    ),
-                    ()
-                ),
-                (
-                    semver('1.2.0'), 
-                    (
-                        'SystemPackage',
-                    ),
-                    ()
-                ),
-                (
-                    semver('1.2.1'), 
-                    (
-                        'SystemPackage',
-                    ),
-                    ()
-                ),
-            )
-        ),
-        (
-            'https://github.com/apple', 'swift-nio', 'SwiftNIO',
-            (
-                (
-                    semver('2.38.0'), 
-                    (
-                        'NIO',
-                        'NIOCore',
-                        'NIOConcurrencyHelpers',
-                        'NIOFoundationCompat',
-                        'NIOEmbedded',
-                        'NIOHTTP1',
-                        'NIOPosix',
-                        'NIOTLS',
-                        'NIOWebSocket',
-                    ),
-                    (
-                        '_NIODataStructures',
-                    )
-                ),
-                (
-                    semver('2.39.0'), 
-                    (
-                        'NIO',
-                        'NIOCore',
-                        'NIOConcurrencyHelpers',
-                        'NIOFoundationCompat',
-                        'NIOEmbedded',
-                        'NIOHTTP1',
-                        'NIOPosix',
-                        'NIOTLS',
-                        'NIOWebSocket',
-                    ),
-                    (
-                        '_NIODataStructures',
-                    )
-                ),
-                (
-                    semver('2.40.0'), 
-                    (
-                        'NIO',
-                        'NIOCore',
-                        'NIOConcurrencyHelpers',
-                        'NIOFoundationCompat',
-                        'NIOEmbedded',
-                        'NIOHTTP1',
-                        'NIOPosix',
-                        'NIOTLS',
-                        'NIOWebSocket',
-                    ),
-                    (
-                        '_NIODataStructures',
-                    )
-                ),
-            )
-        ),
-        (
-            'https://github.com/apple', 'swift-nio-ssl', 'SwiftNIO SSL',
-            (
-                (
-                    semver('2.20.2'), 
-                    (
-                        'NIOSSL',
-                    ),
-                    ()
-                ),
-            )
-        ),
-        (
-            'https://github.com/apple', 'swift-syntax', 'SwiftSyntax',
-            (
-                (
-                    swift('DEVELOPMENT-SNAPSHOT-2022-03-13-a'), 
-                    (
-                        'SwiftSyntax',
-                        'SwiftSyntaxParser',
-                        'SwiftSyntaxBuilder',
-                    ),
-                    ()
-                ),
-                (
-                    swift('DEVELOPMENT-SNAPSHOT-2022-06-20-a'), 
-                    (
-                        'SwiftSyntax',
-                        'SwiftSyntaxParser',
-                        'SwiftSyntaxBuilder',
-                    ),
-                    ()
-                ),
-            )
-        ),
-        (
-            'https://github.com/apple', 'swift-markdown', 'Swift Markdown',
-            (
-                (
-                    swift('DEVELOPMENT-SNAPSHOT-2022-03-13-a'), 
-                    (
-                        'Markdown',
-                    ),
-                    ()
-                ),
-                (
-                    swift('DEVELOPMENT-SNAPSHOT-2022-06-20-a'), 
-                    (
-                        'Markdown',
-                    ),
-                    ()
-                ),
-            )
-        ),
-        (
-            'https://github.com/apple', 'swift-log', 'SwiftLog',
-            (
-                (
-                    semver('1.4.2'), 
-                    (
-                        'Logging',
-                    ),
-                    ()
-                ),
-            )
-        ),
-        (
-            'https://github.com/apple', 'swift-metrics', 'SwiftMetrics',
-            (
-                (
-                    semver('2.3.1'), 
-                    (
-                        'CoreMetrics',
-                        'Metrics',
-                    ),
-                    ()
-                ),
-            )
-        ),
-        (
-            'https://github.com/orlandos-nl', 'niodns', 'SwiftNIO DNS',
-            (
-                (
-                    semver('2.0.7'), 
-                    (
-                        'DNSClient',
-                    ),
-                    ()
-                ),
-            )
-        ),
-        (
-            'https://github.com/orlandos-nl', 'bson', 'Swift BSON',
-            (
-                (
-                    semver('7.0.25'), 
-                    (
-                        'BSON',
-                    ),
-                    ()
-                ),
-            )
-        ),
-        (
-            'https://github.com/orlandos-nl', 'mongokitten', 'MongoKitten',
-            (
-                (
-                    semver('7.0.1'), 
-                    (
-                        'MongoKitten',
-                        'MongoClient',
-                        'MongoCore',
-                        'Meow',
-                    ),
-                    ()
-                ),
-            )
-        ),
-    ):
+for organization, package, brand, tags in index.packages:
     for (tag, products, targets) in tags:
         os.chdir(builds)
         
@@ -333,10 +74,9 @@ for organization, package, brand, tags in (
             with open(os.path.join(sources, '_consumer.swift'), 'w') as file:
                 file.write('\n')
         
-        old_manifest = load_manifest()
+        old_manifest = read_file('Package.swift')
         new_manifest = manifest.format(url = '{0}/{1}'.format(organization, package), 
-            tag =   'exact: "{0}"'.format(tag) if type(tag) is semver else 
-                    'revision: "{0}"'.format(tag), 
+            tag = tag.pin, 
             sources = sources, 
             dependencies = dependencies)
         
@@ -379,8 +119,17 @@ for organization, package, brand, tags in (
             with open(os.path.join(pinned, 'Package.catalog'), 'w') as file:
                 file.write(text) 
             
-            shutil.copyfile(os.path.join(builds, pinned, 'Package.resolved'), 
-                os.path.join(pinned, 'Package.resolved'))
+            # if we are ‘faking’ a semver, we need to edit the Package.resolved 
+            # file so that the version field exists...
+            pins = read_file(os.path.join(builds, pinned, 'Package.resolved'))
+            pins = json.loads(pins)
+            if type(tag) is index.semver:
+                for pin in pins['pins']:
+                    if pin['identity'] == package and 'version' not in pin['state']: 
+                        pin['state']['version'] = tag.version 
+            
+            with open(os.path.join(pinned, 'Package.resolved'), 'w') as file:
+                file.write(json.dumps(pins, indent = 4, sort_keys = True))
             
             print('generated documentation for {0}'.format(pinned))
         else:

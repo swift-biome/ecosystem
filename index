@@ -9,6 +9,7 @@ ecosystem/packages/swift-nio-ssl@2.20.2
 ecosystem/packages/swift-metrics@2.3.1
 ecosystem/packages/swift-log@1.4.2
 ecosystem/packages/niodns@2.0.7
+ecosystem/packages/bson@8.0
 ecosystem/packages/mongokitten@7.0.1
 ecosystem/packages/swift-syntax@swift-DEVELOPMENT-SNAPSHOT-2022-03-13-a
 ecosystem/packages/swift-syntax@swift-DEVELOPMENT-SNAPSHOT-2022-06-20-a

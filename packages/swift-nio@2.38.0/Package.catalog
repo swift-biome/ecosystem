@@ -15,7 +15,11 @@
                     {
                         "modules": [
                             "NIO",
-                            "NIOCore"
+                            "NIOConcurrencyHelpers",
+                            "NIOCore",
+                            "NIOEmbedded",
+                            "NIOPosix",
+                            "_NIODataStructures"
                         ],
                         "package": "swift-nio"
                     }
@@ -31,7 +35,10 @@
                         "modules": [
                             "NIO",
                             "NIOConcurrencyHelpers",
-                            "NIOCore"
+                            "NIOCore",
+                            "NIOEmbedded",
+                            "NIOPosix",
+                            "_NIODataStructures"
                         ],
                         "package": "swift-nio"
                     }
@@ -46,7 +53,11 @@
                     {
                         "modules": [
                             "NIO",
-                            "NIOCore"
+                            "NIOConcurrencyHelpers",
+                            "NIOCore",
+                            "NIOEmbedded",
+                            "NIOPosix",
+                            "_NIODataStructures"
                         ],
                         "package": "swift-nio"
                     }
@@ -61,8 +72,12 @@
                     {
                         "modules": [
                             "NIO",
+                            "NIOConcurrencyHelpers",
                             "NIOCore",
-                            "NIOHTTP1"
+                            "NIOEmbedded",
+                            "NIOHTTP1",
+                            "NIOPosix",
+                            "_NIODataStructures"
                         ],
                         "package": "swift-nio"
                     }
@@ -97,6 +112,7 @@
                 "dependencies": [
                     {
                         "modules": [
+                            "NIOConcurrencyHelpers",
                             "NIOCore",
                             "_NIODataStructures"
                         ],
@@ -128,9 +144,11 @@
                 "dependencies": [
                     {
                         "modules": [
+                            "NIOConcurrencyHelpers",
                             "NIOCore",
                             "NIOEmbedded",
-                            "NIOPosix"
+                            "NIOPosix",
+                            "_NIODataStructures"
                         ],
                         "package": "swift-nio"
                     }

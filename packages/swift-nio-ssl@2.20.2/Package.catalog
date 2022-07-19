@@ -12,7 +12,8 @@
                             "NIOCore",
                             "NIOEmbedded",
                             "NIOPosix",
-                            "NIOTLS"
+                            "NIOTLS",
+                            "_NIODataStructures"
                         ],
                         "package": "swift-nio"
                     }
