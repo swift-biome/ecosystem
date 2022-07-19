@@ -149,6 +149,7 @@ for organization, package, brand, tags in (
                         'NIO',
                         'NIOCore',
                         'NIOConcurrencyHelpers',
+                        'NIOFoundationCompat',
                         'NIOEmbedded',
                         'NIOHTTP1',
                         'NIOPosix',
@@ -165,6 +166,7 @@ for organization, package, brand, tags in (
                         'NIO',
                         'NIOCore',
                         'NIOConcurrencyHelpers',
+                        'NIOFoundationCompat',
                         'NIOEmbedded',
                         'NIOHTTP1',
                         'NIOPosix',
@@ -181,6 +183,7 @@ for organization, package, brand, tags in (
                         'NIO',
                         'NIOCore',
                         'NIOConcurrencyHelpers',
+                        'NIOFoundationCompat',
                         'NIOEmbedded',
                         'NIOHTTP1',
                         'NIOPosix',
@@ -190,6 +193,18 @@ for organization, package, brand, tags in (
                     (
                         '_NIODataStructures',
                     )
+                ),
+            )
+        ),
+        (
+            'https://github.com/apple', 'swift-nio-ssl', 'SwiftNIO SSL',
+            (
+                (
+                    semver('2.20.2'), 
+                    (
+                        'NIOSSL',
+                    ),
+                    ()
                 ),
             )
         ),
@@ -230,6 +245,70 @@ for organization, package, brand, tags in (
                     swift('DEVELOPMENT-SNAPSHOT-2022-06-20-a'), 
                     (
                         'Markdown',
+                    ),
+                    ()
+                ),
+            )
+        ),
+        (
+            'https://github.com/apple', 'swift-log', 'SwiftLog',
+            (
+                (
+                    semver('1.4.2'), 
+                    (
+                        'Logging',
+                    ),
+                    ()
+                ),
+            )
+        ),
+        (
+            'https://github.com/apple', 'swift-metrics', 'SwiftMetrics',
+            (
+                (
+                    semver('2.3.1'), 
+                    (
+                        'CoreMetrics',
+                        'Metrics',
+                    ),
+                    ()
+                ),
+            )
+        ),
+        (
+            'https://github.com/orlandos-nl', 'niodns', 'SwiftNIO DNS',
+            (
+                (
+                    semver('2.0.7'), 
+                    (
+                        'DNSClient',
+                    ),
+                    ()
+                ),
+            )
+        ),
+        (
+            'https://github.com/orlandos-nl', 'bson', 'Swift BSON',
+            (
+                (
+                    semver('7.0.25'), 
+                    (
+                        'BSON',
+                    ),
+                    ()
+                ),
+            )
+        ),
+        (
+            'https://github.com/orlandos-nl', 'mongokitten', 'MongoKitten',
+            (
+                (
+                    semver('7.0.1'), 
+                    (
+                        'MongoKitten',
+                        'MongoClient',
+                        'MongoCore',
+                        'Meow',
                     ),
                     ()
                 ),

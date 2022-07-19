@@ -1,0 +1,30 @@
+[
+    {
+        "brand": "SwiftMetrics",
+        "catalog_tools_version": 2,
+        "modules": [
+            {
+                "dependencies": [],
+                "include": [
+                    "CoreMetrics"
+                ],
+                "module": "CoreMetrics"
+            },
+            {
+                "dependencies": [
+                    {
+                        "modules": [
+                            "CoreMetrics"
+                        ],
+                        "package": "swift-metrics"
+                    }
+                ],
+                "include": [
+                    "Metrics"
+                ],
+                "module": "Metrics"
+            }
+        ],
+        "package": "swift-metrics"
+    }
+]

@@ -1,0 +1,28 @@
+[
+    {
+        "brand": "SwiftNIO SSL",
+        "catalog_tools_version": 2,
+        "modules": [
+            {
+                "dependencies": [
+                    {
+                        "modules": [
+                            "NIO",
+                            "NIOConcurrencyHelpers",
+                            "NIOCore",
+                            "NIOEmbedded",
+                            "NIOPosix",
+                            "NIOTLS"
+                        ],
+                        "package": "swift-nio"
+                    }
+                ],
+                "include": [
+                    "NIOSSL"
+                ],
+                "module": "NIOSSL"
+            }
+        ],
+        "package": "swift-nio-ssl"
+    }
+]

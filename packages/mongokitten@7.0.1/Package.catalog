@@ -1,0 +1,113 @@
+[
+    {
+        "brand": "MongoKitten",
+        "catalog_tools_version": 2,
+        "modules": [
+            {
+                "dependencies": [
+                    {
+                        "modules": [
+                            "BSON"
+                        ],
+                        "package": "bson"
+                    },
+                    {
+                        "modules": [
+                            "Logging"
+                        ],
+                        "package": "swift-log"
+                    },
+                    {
+                        "modules": [
+                            "CoreMetrics",
+                            "Metrics"
+                        ],
+                        "package": "swift-metrics"
+                    },
+                    {
+                        "modules": [
+                            "NIO",
+                            "NIOConcurrencyHelpers",
+                            "NIOCore",
+                            "NIOEmbedded",
+                            "NIOFoundationCompat",
+                            "NIOPosix",
+                            "NIOTLS"
+                        ],
+                        "package": "swift-nio"
+                    },
+                    {
+                        "modules": [
+                            "NIOSSL"
+                        ],
+                        "package": "swift-nio-ssl"
+                    }
+                ],
+                "include": [
+                    "MongoCore"
+                ],
+                "module": "MongoCore"
+            },
+            {
+                "dependencies": [
+                    {
+                        "modules": [
+                            "MongoCore",
+                            "_MongoKittenCrypto"
+                        ],
+                        "package": "mongokitten"
+                    },
+                    {
+                        "modules": [
+                            "DNSClient"
+                        ],
+                        "package": "niodns"
+                    },
+                    {
+                        "modules": [
+                            "NIO",
+                            "NIOCore",
+                            "NIOEmbedded",
+                            "NIOPosix"
+                        ],
+                        "package": "swift-nio"
+                    }
+                ],
+                "include": [
+                    "MongoClient"
+                ],
+                "module": "MongoClient"
+            },
+            {
+                "dependencies": [
+                    {
+                        "modules": [
+                            "MongoClient",
+                            "MongoKittenCore"
+                        ],
+                        "package": "mongokitten"
+                    }
+                ],
+                "include": [
+                    "MongoKitten"
+                ],
+                "module": "MongoKitten"
+            },
+            {
+                "dependencies": [
+                    {
+                        "modules": [
+                            "MongoKitten"
+                        ],
+                        "package": "mongokitten"
+                    }
+                ],
+                "include": [
+                    "Meow"
+                ],
+                "module": "Meow"
+            }
+        ],
+        "package": "mongokitten"
+    }
+]

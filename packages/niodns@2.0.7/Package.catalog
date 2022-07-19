@@ -1,0 +1,26 @@
+[
+    {
+        "brand": "SwiftNIO DNS",
+        "catalog_tools_version": 2,
+        "modules": [
+            {
+                "dependencies": [
+                    {
+                        "modules": [
+                            "NIO",
+                            "NIOCore",
+                            "NIOEmbedded",
+                            "NIOPosix"
+                        ],
+                        "package": "swift-nio"
+                    }
+                ],
+                "include": [
+                    "DNSClient"
+                ],
+                "module": "DNSClient"
+            }
+        ],
+        "package": "niodns"
+    }
+]

@@ -46,6 +46,21 @@
                     {
                         "modules": [
                             "NIO",
+                            "NIOCore"
+                        ],
+                        "package": "swift-nio"
+                    }
+                ],
+                "include": [
+                    "NIOFoundationCompat"
+                ],
+                "module": "NIOFoundationCompat"
+            },
+            {
+                "dependencies": [
+                    {
+                        "modules": [
+                            "NIO",
                             "NIOCore",
                             "NIOHTTP1"
                         ],
