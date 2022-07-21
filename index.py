@@ -48,7 +48,7 @@ packages = (
                 ()
             ),
             (
-                semver('0.3.0', revision = 'd9ec933b8e98905b68e90036faaadafb116f973c'), 
+                semver('0.3.0', revision = 'd4efcd044643984847497a93aae424239b997474'), 
                 (
                     'JSON',
                 ),

@@ -13,7 +13,7 @@
                     }
                 ],
                 "include": [
-                    "json.docc",
+                    "JSON.docc",
                     "JSON"
                 ],
                 "module": "JSON"
