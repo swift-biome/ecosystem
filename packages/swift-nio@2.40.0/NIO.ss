@@ -1,0 +1,1 @@
+{"culture":"NIO","dependencies":[{"package":"swift-nio","modules":["NIOConcurrencyHelpers","NIOCore","NIOEmbedded","NIOPosix","_NIODataStructures"]}],"extensions":[],"partitions":[{"namespace":"NIO","communities":[]}],"identifiers":[],"vertices":[],"edges":{},"hints":[],"sourcemap":[]}
