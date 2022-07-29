@@ -41,8 +41,8 @@
             "kind": "remoteSourceControl",
             "location": "https://github.com/apple/swift-metrics.git",
             "state": {
-                "revision": "1c1408bf8fc21be93713e897d2badf500ea38419",
-                "version": "2.3.1"
+                "revision": "53be78637ecd165d1ddedc4e20de69b8f43ec3b7",
+                "version": "2.3.2"
             }
         },
         {
@@ -68,7 +68,7 @@
             "kind": "remoteSourceControl",
             "location": "https://github.com/kelvin13/swift-package-catalog",
             "state": {
-                "revision": "0952006573edb8153b12f51c014b5fd94a37b8fc",
+                "revision": "d2c6919e9735097f8f54e718d456875c1f4ccd6e",
                 "version": "0.2.1"
             }
         }

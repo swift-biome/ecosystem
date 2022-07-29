@@ -41,7 +41,7 @@ def read_file(path):
 
 toolchain = os.path.join(os.environ['SWIFTENV_ROOT'], 
     'versions', 
-    'DEVELOPMENT-SNAPSHOT-2022-06-20-a', 
+    'DEVELOPMENT-SNAPSHOT-2022-07-25-a', 
     'usr', 
     'bin', 
     'swift')
