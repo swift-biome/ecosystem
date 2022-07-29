@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-import os, subprocess, shutil, glob, json
+import os, subprocess, shutil, json
 import index
 
 manifest = '''\
