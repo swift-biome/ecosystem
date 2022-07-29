@@ -240,7 +240,7 @@ packages = (
         'https://github.com/orlandos-nl', 'bson', 'Swift BSON',
         (
             (
-                semver('8.0', revision = 'e5f3c18e89048961156f3cb3af7f662979a2d0a9'), 
+                semver('8.0.1'), 
                 (
                     'BSON',
                 ),
@@ -253,6 +253,19 @@ packages = (
         (
             (
                 semver('7.0.1'), 
+                (
+                    'MongoCore',
+                    'MongoKitten',
+                    'MongoClient',
+                    'Meow',
+                ),
+                (
+                    'MongoKittenCore',
+                    '_MongoKittenCrypto',
+                )
+            ),
+            (
+                semver('7.1.0'), 
                 (
                     'MongoCore',
                     'MongoKitten',

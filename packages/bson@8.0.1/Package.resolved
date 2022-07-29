@@ -1,0 +1,32 @@
+{
+    "pins": [
+        {
+            "identity": "bson",
+            "kind": "remoteSourceControl",
+            "location": "https://github.com/orlandos-nl/bson",
+            "state": {
+                "revision": "e5f3c18e89048961156f3cb3af7f662979a2d0a9",
+                "version": "8.0.1"
+            }
+        },
+        {
+            "identity": "swift-nio",
+            "kind": "remoteSourceControl",
+            "location": "https://github.com/apple/swift-nio.git",
+            "state": {
+                "revision": "124119f0bb12384cef35aa041d7c3a686108722d",
+                "version": "2.40.0"
+            }
+        },
+        {
+            "identity": "swift-package-catalog",
+            "kind": "remoteSourceControl",
+            "location": "https://github.com/kelvin13/swift-package-catalog",
+            "state": {
+                "revision": "d2c6919e9735097f8f54e718d456875c1f4ccd6e",
+                "version": "0.2.1"
+            }
+        }
+    ],
+    "version": 2
+}
