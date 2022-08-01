@@ -1,7 +1,7 @@
 [
     {
         "brand": "SwiftNIO SSL",
-        "catalog_tools_version": 2,
+        "catalog_tools_version": 3,
         "modules": [
             {
                 "dependencies": [
@@ -24,6 +24,7 @@
                 "module": "NIOSSL"
             }
         ],
-        "package": "swift-nio-ssl"
+        "package": "swift-nio-ssl",
+        "snippets": []
     }
 ]

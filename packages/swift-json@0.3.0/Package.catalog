@@ -1,7 +1,7 @@
 [
     {
         "brand": "Swift JSON",
-        "catalog_tools_version": 2,
+        "catalog_tools_version": 3,
         "modules": [
             {
                 "dependencies": [
@@ -19,6 +19,7 @@
                 "module": "JSON"
             }
         ],
-        "package": "swift-json"
+        "package": "swift-json",
+        "snippets": []
     }
 ]

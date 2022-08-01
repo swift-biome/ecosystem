@@ -1,7 +1,7 @@
 [
     {
         "brand": "SwiftSyntax",
-        "catalog_tools_version": 2,
+        "catalog_tools_version": 3,
         "modules": [
             {
                 "dependencies": [],
@@ -39,6 +39,7 @@
                 "module": "SwiftSyntaxBuilder"
             }
         ],
-        "package": "swift-syntax"
+        "package": "swift-syntax",
+        "snippets": []
     }
 ]

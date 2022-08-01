@@ -1,7 +1,7 @@
 [
     {
         "brand": "SwiftNIO DNS",
-        "catalog_tools_version": 2,
+        "catalog_tools_version": 3,
         "modules": [
             {
                 "dependencies": [
@@ -23,6 +23,7 @@
                 "module": "DNSClient"
             }
         ],
-        "package": "niodns"
+        "package": "niodns",
+        "snippets": []
     }
 ]

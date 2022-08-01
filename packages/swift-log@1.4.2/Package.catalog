@@ -1,7 +1,7 @@
 [
     {
         "brand": "SwiftLog",
-        "catalog_tools_version": 2,
+        "catalog_tools_version": 3,
         "modules": [
             {
                 "dependencies": [],
@@ -11,6 +11,7 @@
                 "module": "Logging"
             }
         ],
-        "package": "swift-log"
+        "package": "swift-log",
+        "snippets": []
     }
 ]

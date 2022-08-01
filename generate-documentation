@@ -15,7 +15,7 @@ let package:Package = .init(
     ],
     dependencies: 
     [
-        .package(url: "https://github.com/kelvin13/swift-package-catalog", from: "0.2.1"),
+        .package(url: "https://github.com/kelvin13/swift-package-catalog", exact: "0.3.0"),
         .package(url: "{url}", {tag}),
     ],
     targets: 
@@ -101,7 +101,7 @@ for organization, package, brand, tags in index.packages:
             text = output.stdout.decode('utf-8')
             catalog = json.loads(text)
             for package_catalog in catalog:
-                assert package_catalog['catalog_tools_version'] == 2 
+                assert package_catalog['catalog_tools_version'] == 3 
                 assert package_catalog['package'] == package 
                 
                 if 'brand' not in package_catalog:
@@ -114,6 +114,14 @@ for organization, package, brand, tags in index.packages:
                     for source, destination in zip(module_catalog['include'], destinations):
                         shutil.copytree(source, os.path.join(pinned, destination))
                     module_catalog['include'] = destinations
+                if 'snippets' in package_catalog:
+                    for module_catalog in package_catalog['snippets']:
+                        # move the snippet source files
+                        destinations = tuple(os.path.basename(path)
+                            for path in module_catalog['sources'])
+                        for source, destination in zip(module_catalog['sources'], destinations):
+                            shutil.copytree(source, os.path.join(pinned, destination))
+                        module_catalog['sources'] = destinations
             text = json.dumps(catalog, indent = 4, sort_keys = True)            
             
             with open(os.path.join(pinned, 'Package.catalog'), 'w') as file:

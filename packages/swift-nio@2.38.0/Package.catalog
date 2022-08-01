@@ -1,14 +1,85 @@
 [
     {
         "brand": "SwiftNIO",
-        "catalog_tools_version": 2,
+        "catalog_tools_version": 3,
         "modules": [
+            {
+                "dependencies": [
+                    {
+                        "modules": [
+                            "NIOConcurrencyHelpers",
+                            "NIOCore",
+                            "NIOEmbedded",
+                            "NIOPosix",
+                            "_NIODataStructures"
+                        ],
+                        "package": "swift-nio"
+                    }
+                ],
+                "include": [
+                    "NIO"
+                ],
+                "module": "NIO"
+            },
+            {
+                "dependencies": [
+                    {
+                        "modules": [
+                            "NIOConcurrencyHelpers"
+                        ],
+                        "package": "swift-nio"
+                    }
+                ],
+                "include": [
+                    "NIOCore"
+                ],
+                "module": "NIOCore"
+            },
             {
                 "dependencies": [],
                 "include": [
                     "NIOConcurrencyHelpers"
                 ],
                 "module": "NIOConcurrencyHelpers"
+            },
+            {
+                "dependencies": [
+                    {
+                        "modules": [
+                            "NIOConcurrencyHelpers",
+                            "NIOCore",
+                            "_NIODataStructures"
+                        ],
+                        "package": "swift-nio"
+                    }
+                ],
+                "include": [
+                    "NIOEmbedded"
+                ],
+                "module": "NIOEmbedded"
+            },
+            {
+                "dependencies": [],
+                "include": [
+                    "_NIODataStructures"
+                ],
+                "module": "_NIODataStructures"
+            },
+            {
+                "dependencies": [
+                    {
+                        "modules": [
+                            "NIOConcurrencyHelpers",
+                            "NIOCore",
+                            "_NIODataStructures"
+                        ],
+                        "package": "swift-nio"
+                    }
+                ],
+                "include": [
+                    "NIOPosix"
+                ],
+                "module": "NIOPosix"
             },
             {
                 "dependencies": [
@@ -25,9 +96,9 @@
                     }
                 ],
                 "include": [
-                    "NIOTLS"
+                    "NIOFoundationCompat"
                 ],
-                "module": "NIOTLS"
+                "module": "NIOFoundationCompat"
             },
             {
                 "dependencies": [
@@ -63,9 +134,9 @@
                     }
                 ],
                 "include": [
-                    "NIOFoundationCompat"
+                    "NIOTLS"
                 ],
-                "module": "NIOFoundationCompat"
+                "module": "NIOTLS"
             },
             {
                 "dependencies": [
@@ -86,79 +157,9 @@
                     "NIOWebSocket"
                 ],
                 "module": "NIOWebSocket"
-            },
-            {
-                "dependencies": [
-                    {
-                        "modules": [
-                            "NIOConcurrencyHelpers"
-                        ],
-                        "package": "swift-nio"
-                    }
-                ],
-                "include": [
-                    "NIOCore"
-                ],
-                "module": "NIOCore"
-            },
-            {
-                "dependencies": [],
-                "include": [
-                    "_NIODataStructures"
-                ],
-                "module": "_NIODataStructures"
-            },
-            {
-                "dependencies": [
-                    {
-                        "modules": [
-                            "NIOConcurrencyHelpers",
-                            "NIOCore",
-                            "_NIODataStructures"
-                        ],
-                        "package": "swift-nio"
-                    }
-                ],
-                "include": [
-                    "NIOEmbedded"
-                ],
-                "module": "NIOEmbedded"
-            },
-            {
-                "dependencies": [
-                    {
-                        "modules": [
-                            "NIOConcurrencyHelpers",
-                            "NIOCore",
-                            "_NIODataStructures"
-                        ],
-                        "package": "swift-nio"
-                    }
-                ],
-                "include": [
-                    "NIOPosix"
-                ],
-                "module": "NIOPosix"
-            },
-            {
-                "dependencies": [
-                    {
-                        "modules": [
-                            "NIOConcurrencyHelpers",
-                            "NIOCore",
-                            "NIOEmbedded",
-                            "NIOPosix",
-                            "_NIODataStructures"
-                        ],
-                        "package": "swift-nio"
-                    }
-                ],
-                "include": [
-                    "NIO"
-                ],
-                "module": "NIO"
             }
         ],
-        "package": "swift-nio"
+        "package": "swift-nio",
+        "snippets": []
     }
 ]

@@ -1,7 +1,7 @@
 [
     {
         "brand": "SwiftMetrics",
-        "catalog_tools_version": 2,
+        "catalog_tools_version": 3,
         "modules": [
             {
                 "dependencies": [],
@@ -25,6 +25,7 @@
                 "module": "Metrics"
             }
         ],
-        "package": "swift-metrics"
+        "package": "swift-metrics",
+        "snippets": []
     }
 ]

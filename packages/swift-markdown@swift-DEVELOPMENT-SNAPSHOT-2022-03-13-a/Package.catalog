@@ -1,7 +1,7 @@
 [
     {
         "brand": "Swift Markdown",
-        "catalog_tools_version": 2,
+        "catalog_tools_version": 3,
         "modules": [
             {
                 "dependencies": [],
@@ -12,6 +12,7 @@
                 "module": "Markdown"
             }
         ],
-        "package": "swift-markdown"
+        "package": "swift-markdown",
+        "snippets": []
     }
 ]
