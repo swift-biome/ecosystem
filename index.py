@@ -143,6 +143,40 @@ packages = (
                     '_NIODataStructures',
                 )
             ),
+            (
+                semver('2.41.0'), 
+                (
+                    'NIO',
+                    'NIOCore',
+                    'NIOConcurrencyHelpers',
+                    'NIOFoundationCompat',
+                    'NIOEmbedded',
+                    'NIOHTTP1',
+                    'NIOPosix',
+                    'NIOTLS',
+                    'NIOWebSocket',
+                ),
+                (
+                    '_NIODataStructures',
+                )
+            ),
+            (
+                semver('2.41.1'), 
+                (
+                    'NIO',
+                    'NIOCore',
+                    'NIOConcurrencyHelpers',
+                    'NIOFoundationCompat',
+                    'NIOEmbedded',
+                    'NIOHTTP1',
+                    'NIOPosix',
+                    'NIOTLS',
+                    'NIOWebSocket',
+                ),
+                (
+                    '_NIODataStructures',
+                )
+            ),
         )
     ),
     (
@@ -150,6 +184,13 @@ packages = (
         (
             (
                 semver('2.20.2'), 
+                (
+                    'NIOSSL',
+                ),
+                ()
+            ),
+            (
+                semver('2.21.0'), 
                 (
                     'NIOSSL',
                 ),
@@ -278,6 +319,19 @@ packages = (
             ),
             (
                 semver('7.1.0'), 
+                (
+                    'MongoCore',
+                    'MongoKitten',
+                    'MongoClient',
+                    'Meow',
+                ),
+                (
+                    'MongoKittenCore',
+                    '_MongoKittenCrypto',
+                )
+            ),
+            (
+                semver('7.2.0'), 
                 (
                     'MongoCore',
                     'MongoKitten',

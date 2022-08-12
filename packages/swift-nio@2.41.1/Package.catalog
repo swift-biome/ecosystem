@@ -1,0 +1,207 @@
+[
+    {
+        "brand": "SwiftNIO",
+        "catalog_tools_version": 3,
+        "modules": [
+            {
+                "dependencies": [
+                    {
+                        "modules": [
+                            "Atomics"
+                        ],
+                        "package": "swift-atomics"
+                    },
+                    {
+                        "modules": [
+                            "NIOConcurrencyHelpers",
+                            "NIOCore",
+                            "NIOEmbedded",
+                            "NIOPosix",
+                            "_NIODataStructures"
+                        ],
+                        "package": "swift-nio"
+                    }
+                ],
+                "include": [
+                    "NIO"
+                ],
+                "module": "NIO"
+            },
+            {
+                "dependencies": [
+                    {
+                        "modules": [
+                            "NIOConcurrencyHelpers"
+                        ],
+                        "package": "swift-nio"
+                    }
+                ],
+                "include": [
+                    "NIOCore"
+                ],
+                "module": "NIOCore"
+            },
+            {
+                "dependencies": [],
+                "include": [
+                    "NIOConcurrencyHelpers"
+                ],
+                "module": "NIOConcurrencyHelpers"
+            },
+            {
+                "dependencies": [
+                    {
+                        "modules": [
+                            "Atomics"
+                        ],
+                        "package": "swift-atomics"
+                    },
+                    {
+                        "modules": [
+                            "NIOConcurrencyHelpers",
+                            "NIOCore",
+                            "_NIODataStructures"
+                        ],
+                        "package": "swift-nio"
+                    }
+                ],
+                "include": [
+                    "NIOEmbedded"
+                ],
+                "module": "NIOEmbedded"
+            },
+            {
+                "dependencies": [],
+                "include": [
+                    "_NIODataStructures"
+                ],
+                "module": "_NIODataStructures"
+            },
+            {
+                "dependencies": [
+                    {
+                        "modules": [
+                            "Atomics"
+                        ],
+                        "package": "swift-atomics"
+                    },
+                    {
+                        "modules": [
+                            "NIOConcurrencyHelpers",
+                            "NIOCore",
+                            "_NIODataStructures"
+                        ],
+                        "package": "swift-nio"
+                    }
+                ],
+                "include": [
+                    "NIOPosix"
+                ],
+                "module": "NIOPosix"
+            },
+            {
+                "dependencies": [
+                    {
+                        "modules": [
+                            "Atomics"
+                        ],
+                        "package": "swift-atomics"
+                    },
+                    {
+                        "modules": [
+                            "NIO",
+                            "NIOConcurrencyHelpers",
+                            "NIOCore",
+                            "NIOEmbedded",
+                            "NIOPosix",
+                            "_NIODataStructures"
+                        ],
+                        "package": "swift-nio"
+                    }
+                ],
+                "include": [
+                    "NIOFoundationCompat"
+                ],
+                "module": "NIOFoundationCompat"
+            },
+            {
+                "dependencies": [
+                    {
+                        "modules": [
+                            "Atomics"
+                        ],
+                        "package": "swift-atomics"
+                    },
+                    {
+                        "modules": [
+                            "NIO",
+                            "NIOConcurrencyHelpers",
+                            "NIOCore",
+                            "NIOEmbedded",
+                            "NIOPosix",
+                            "_NIODataStructures"
+                        ],
+                        "package": "swift-nio"
+                    }
+                ],
+                "include": [
+                    "NIOHTTP1"
+                ],
+                "module": "NIOHTTP1"
+            },
+            {
+                "dependencies": [
+                    {
+                        "modules": [
+                            "Atomics"
+                        ],
+                        "package": "swift-atomics"
+                    },
+                    {
+                        "modules": [
+                            "NIO",
+                            "NIOConcurrencyHelpers",
+                            "NIOCore",
+                            "NIOEmbedded",
+                            "NIOPosix",
+                            "_NIODataStructures"
+                        ],
+                        "package": "swift-nio"
+                    }
+                ],
+                "include": [
+                    "NIOTLS"
+                ],
+                "module": "NIOTLS"
+            },
+            {
+                "dependencies": [
+                    {
+                        "modules": [
+                            "Atomics"
+                        ],
+                        "package": "swift-atomics"
+                    },
+                    {
+                        "modules": [
+                            "NIO",
+                            "NIOConcurrencyHelpers",
+                            "NIOCore",
+                            "NIOEmbedded",
+                            "NIOHTTP1",
+                            "NIOPosix",
+                            "_NIODataStructures"
+                        ],
+                        "package": "swift-nio"
+                    }
+                ],
+                "include": [
+                    "NIOWebSocket"
+                ],
+                "module": "NIOWebSocket"
+            }
+        ],
+        "package": "swift-nio",
+        "snippets": []
+    }
+]
