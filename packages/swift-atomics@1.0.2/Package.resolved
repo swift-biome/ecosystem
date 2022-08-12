@@ -1,12 +1,12 @@
 {
     "pins": [
         {
-            "identity": "swift-log",
+            "identity": "swift-atomics",
             "kind": "remoteSourceControl",
-            "location": "https://github.com/apple/swift-log",
+            "location": "https://github.com/apple/swift-atomics",
             "state": {
-                "revision": "5d66f7ba25daf4f94100e7022febf3c75e37a6c7",
-                "version": "1.4.2"
+                "revision": "919eb1d83e02121cdb434c7bfc1f0c66ef17febe",
+                "version": "1.0.2"
             }
         },
         {

@@ -1,0 +1,17 @@
+[
+    {
+        "brand": "Swift Atomics",
+        "catalog_tools_version": 3,
+        "modules": [
+            {
+                "dependencies": [],
+                "include": [
+                    "Atomics"
+                ],
+                "module": "Atomics"
+            }
+        ],
+        "package": "swift-atomics",
+        "snippets": []
+    }
+]

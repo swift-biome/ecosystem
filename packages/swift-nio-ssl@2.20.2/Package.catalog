@@ -7,6 +7,12 @@
                 "dependencies": [
                     {
                         "modules": [
+                            "Atomics"
+                        ],
+                        "package": "swift-atomics"
+                    },
+                    {
+                        "modules": [
                             "NIO",
                             "NIOConcurrencyHelpers",
                             "NIOCore",

@@ -158,6 +158,18 @@ packages = (
         )
     ),
     (
+        'https://github.com/apple', 'swift-atomics', 'Swift Atomics',
+        (
+            (
+                semver('1.0.2'), 
+                (
+                    'Atomics',
+                ),
+                ()
+            ),
+        )
+    ),
+    (
         'https://github.com/apple', 'swift-syntax', 'SwiftSyntax',
         (
             (

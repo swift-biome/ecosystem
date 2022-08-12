@@ -14,8 +14,8 @@
             "kind": "remoteSourceControl",
             "location": "https://github.com/kelvin13/swift-package-catalog",
             "state": {
-                "revision": "47986a92f21e552f9973ab2d2303578ba9ccd7c8",
-                "version": "0.3.0"
+                "revision": "6e71dba093cf72a8a697309401ef5be52d42ddf3",
+                "version": "0.4.0"
             }
         }
     ],

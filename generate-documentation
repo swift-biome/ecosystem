@@ -15,7 +15,7 @@ let package:Package = .init(
     ],
     dependencies: 
     [
-        .package(url: "https://github.com/kelvin13/swift-package-catalog", exact: "0.3.0"),
+        .package(url: "https://github.com/kelvin13/swift-package-catalog", exact: "0.4.0"),
         .package(url: "{url}", {tag}),
     ],
     targets: 
