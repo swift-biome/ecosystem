@@ -1,0 +1,24 @@
+[
+    {
+        "brand": "Swift Collections",
+        "catalog_tools_version": 3,
+        "modules": [
+            {
+                "dependencies": [],
+                "include": [
+                    "DequeModule"
+                ],
+                "module": "DequeModule"
+            },
+            {
+                "dependencies": [],
+                "include": [
+                    "OrderedCollections"
+                ],
+                "module": "OrderedCollections"
+            }
+        ],
+        "package": "swift-collections",
+        "snippets": []
+    }
+]

@@ -1,0 +1,25 @@
+[
+    {
+        "brand": "ArgumentParser",
+        "catalog_tools_version": 3,
+        "modules": [
+            {
+                "dependencies": [
+                    {
+                        "modules": [
+                            "ArgumentParserToolInfo"
+                        ],
+                        "package": "swift-argument-parser"
+                    }
+                ],
+                "include": [
+                    "Documentation.docc",
+                    "ArgumentParser"
+                ],
+                "module": "ArgumentParser"
+            }
+        ],
+        "package": "swift-argument-parser",
+        "snippets": []
+    }
+]

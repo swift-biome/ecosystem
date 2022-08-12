@@ -48,7 +48,7 @@ packages = (
                 ()
             ),
             (
-                semver('0.3.0', revision = 'a7e049b77252adac112bd61f8e734a311cdf6c34'), 
+                semver('0.3.0', revision = '038dcd31140285462f09cf2c2b4a976bcb3ab018'), 
                 (
                     'JSON',
                 ),
@@ -205,6 +205,44 @@ packages = (
                 semver('1.0.2'), 
                 (
                     'Atomics',
+                ),
+                ()
+            ),
+        )
+    ),
+    (
+        'https://github.com/apple', 'swift-numerics', 'Swift Numerics',
+        (
+            (
+                semver('1.0.2'), 
+                (
+                    'ComplexModule',
+                    'RealModule',
+                ),
+                ()
+            ),
+        )
+    ),
+    (
+        'https://github.com/apple', 'swift-collections', 'Swift Collections',
+        (
+            (
+                semver('1.0.2'), 
+                (
+                    'DequeModule',
+                    'OrderedCollections',
+                ),
+                ()
+            ),
+        )
+    ),
+    (
+        'https://github.com/apple', 'swift-argument-parser', 'ArgumentParser',
+        (
+            (
+                semver('1.1.3'), 
+                (
+                    'ArgumentParser',
                 ),
                 ()
             ),

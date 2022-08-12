@@ -1,0 +1,31 @@
+[
+    {
+        "brand": "Swift Numerics",
+        "catalog_tools_version": 3,
+        "modules": [
+            {
+                "dependencies": [
+                    {
+                        "modules": [
+                            "RealModule"
+                        ],
+                        "package": "swift-numerics"
+                    }
+                ],
+                "include": [
+                    "ComplexModule"
+                ],
+                "module": "ComplexModule"
+            },
+            {
+                "dependencies": [],
+                "include": [
+                    "RealModule"
+                ],
+                "module": "RealModule"
+            }
+        ],
+        "package": "swift-numerics",
+        "snippets": []
+    }
+]

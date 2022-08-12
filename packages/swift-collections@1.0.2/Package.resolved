@@ -1,0 +1,23 @@
+{
+    "pins": [
+        {
+            "identity": "swift-collections",
+            "kind": "remoteSourceControl",
+            "location": "https://github.com/apple/swift-collections",
+            "state": {
+                "revision": "48254824bb4248676bf7ce56014ff57b142b77eb",
+                "version": "1.0.2"
+            }
+        },
+        {
+            "identity": "swift-package-catalog",
+            "kind": "remoteSourceControl",
+            "location": "https://github.com/kelvin13/swift-package-catalog",
+            "state": {
+                "revision": "6e71dba093cf72a8a697309401ef5be52d42ddf3",
+                "version": "0.4.0"
+            }
+        }
+    ],
+    "version": 2
+}
