@@ -17,6 +17,13 @@
                     "ArgumentParser"
                 ],
                 "module": "ArgumentParser"
+            },
+            {
+                "dependencies": [],
+                "include": [
+                    "ArgumentParserToolInfo"
+                ],
+                "module": "ArgumentParserToolInfo"
             }
         ],
         "package": "swift-argument-parser",

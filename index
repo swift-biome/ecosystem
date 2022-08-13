@@ -3,6 +3,8 @@ ecosystem/packages/swift-grammar@0.1.5
 ecosystem/packages/swift-json@0.2.2
 ecosystem/packages/swift-json@0.3.0
 ecosystem/packages/swift-atomics@1.0.2
+ecosystem/packages/swift-numerics@1.0.2
+ecosystem/packages/swift-collections@1.0.2
 ecosystem/packages/swift-nio@2.38.0
 ecosystem/packages/swift-nio@2.39.0
 ecosystem/packages/swift-nio@2.40.0
@@ -25,3 +27,4 @@ ecosystem/packages/swift-system@1.1.0
 ecosystem/packages/swift-system@1.1.1
 ecosystem/packages/swift-system@1.2.0
 ecosystem/packages/swift-system@1.2.1
+ecosystem/packages/swift-argument-parser@1.1.3

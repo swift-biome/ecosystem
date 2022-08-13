@@ -244,7 +244,9 @@ packages = (
                 (
                     'ArgumentParser',
                 ),
-                ()
+                (
+                    'ArgumentParserToolInfo',
+                )
             ),
         )
     ),
