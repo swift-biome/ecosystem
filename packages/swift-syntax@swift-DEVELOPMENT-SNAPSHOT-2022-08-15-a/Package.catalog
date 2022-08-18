@@ -1,0 +1,45 @@
+[
+    {
+        "brand": "SwiftSyntax",
+        "catalog_tools_version": 3,
+        "modules": [
+            {
+                "dependencies": [],
+                "include": [
+                    "SwiftSyntax"
+                ],
+                "module": "SwiftSyntax"
+            },
+            {
+                "dependencies": [
+                    {
+                        "modules": [
+                            "SwiftSyntax"
+                        ],
+                        "package": "swift-syntax"
+                    }
+                ],
+                "include": [
+                    "SwiftSyntaxParser"
+                ],
+                "module": "SwiftSyntaxParser"
+            },
+            {
+                "dependencies": [
+                    {
+                        "modules": [
+                            "SwiftSyntax"
+                        ],
+                        "package": "swift-syntax"
+                    }
+                ],
+                "include": [
+                    "SwiftSyntaxBuilder"
+                ],
+                "module": "SwiftSyntaxBuilder"
+            }
+        ],
+        "package": "swift-syntax",
+        "snippets": []
+    }
+]

@@ -1,0 +1,23 @@
+{
+    "pins": [
+        {
+            "identity": "swift-package-catalog",
+            "kind": "remoteSourceControl",
+            "location": "https://github.com/kelvin13/swift-package-catalog",
+            "state": {
+                "revision": "6e71dba093cf72a8a697309401ef5be52d42ddf3",
+                "version": "0.4.0"
+            }
+        },
+        {
+            "identity": "swift-syntax",
+            "kind": "remoteSourceControl",
+            "location": "https://github.com/apple/swift-syntax",
+            "state": {
+                "branch": "swift-DEVELOPMENT-SNAPSHOT-2022-08-15-a",
+                "revision": "59c93fc85b59aefcf012df8ffb086a275689d078"
+            }
+        }
+    ],
+    "version": 2
+}

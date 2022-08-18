@@ -271,6 +271,15 @@ packages = (
                 ),
                 ()
             ),
+            (
+                swift('DEVELOPMENT-SNAPSHOT-2022-08-15-a'), 
+                (
+                    'SwiftSyntax',
+                    'SwiftSyntaxParser',
+                    'SwiftSyntaxBuilder',
+                ),
+                ()
+            ),
         )
     ),
     (
@@ -372,6 +381,19 @@ packages = (
             ),
             (
                 semver('7.2.0'), 
+                (
+                    'MongoCore',
+                    'MongoKitten',
+                    'MongoClient',
+                    'Meow',
+                ),
+                (
+                    'MongoKittenCore',
+                    '_MongoKittenCrypto',
+                )
+            ),
+            (
+                semver('7.2.1'), 
                 (
                     'MongoCore',
                     'MongoKitten',
