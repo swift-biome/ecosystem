@@ -1,0 +1,17 @@
+[
+    {
+        "brand": "Swift Grammar",
+        "catalog_tools_version": 3,
+        "modules": [
+            {
+                "dependencies": [],
+                "include": [
+                    "Grammar"
+                ],
+                "module": "Grammar"
+            }
+        ],
+        "package": "swift-grammar",
+        "snippets": []
+    }
+]

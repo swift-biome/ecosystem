@@ -39,12 +39,9 @@ def read_file(path):
             return file.read()
     return None
 
-toolchain = os.path.join(os.environ['SWIFTENV_ROOT'], 
-    'versions', 
-    'DEVELOPMENT-SNAPSHOT-2022-08-09-a', 
-    'usr', 
-    'bin', 
-    'swift')
+
+subprocess.run(('swiftenv', 'versions'))
+toolchain = 'swift'
 
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 workspace = 'packages'
@@ -57,11 +54,16 @@ os.makedirs(builds, exist_ok = True)
 
 for organization, package, brand, tags in index.packages:
     for (tag, products, targets) in tags:
-        os.chdir(builds)
         
         modules = products + targets
         pinned = '{0}@{1}'.format(package, tag)
+
+        if os.path.exists(pinned):
+            print('skipping {0} {1} (already exists)'.format(package, tag))
+            continue
         
+        os.chdir(builds)
+
         dependencies = ','.join('.product(name: "{0}", package: "{1}")'
             .format(product, package) for product in products)
         
@@ -93,8 +95,6 @@ for organization, package, brand, tags in index.packages:
         os.chdir('..')
         os.chdir('..')
         
-        if os.path.exists(pinned):
-            shutil.rmtree(pinned)
         os.makedirs(pinned)
         
         if output.returncode == 0:
