@@ -1,0 +1,24 @@
+[
+    {
+        "brand": "Swift Algorithms",
+        "catalog_tools_version": 3,
+        "modules": [
+            {
+                "dependencies": [
+                    {
+                        "modules": [
+                            "RealModule"
+                        ],
+                        "package": "swift-numerics"
+                    }
+                ],
+                "include": [
+                    "Algorithms"
+                ],
+                "module": "Algorithms"
+            }
+        ],
+        "package": "swift-algorithms",
+        "snippets": []
+    }
+]

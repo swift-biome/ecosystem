@@ -244,6 +244,18 @@ packages = (
         )
     ),
     (
+        'https://github.com/apple', 'swift-algorithms', 'Swift Algorithms',
+        (
+            (
+                semver('1.0.0'), 
+                (
+                    'Algorithms',
+                ),
+                ()
+            ),
+        )
+    ),
+    (
         'https://github.com/apple', 'swift-argument-parser', 'ArgumentParser',
         (
             (

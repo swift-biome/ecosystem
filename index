@@ -6,6 +6,7 @@ ecosystem/packages/swift-json@0.3.0
 ecosystem/packages/swift-atomics@1.0.2
 ecosystem/packages/swift-numerics@1.0.2
 ecosystem/packages/swift-collections@1.0.2
+ecosystem/packages/swift-algorithms@1.0.0
 ecosystem/packages/swift-nio@2.38.0
 ecosystem/packages/swift-nio@2.39.0
 ecosystem/packages/swift-nio@2.40.0
