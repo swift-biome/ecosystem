@@ -5,7 +5,7 @@
             "kind": "remoteSourceControl",
             "location": "https://github.com/kelvin13/swift-grammar",
             "state": {
-                "revision": "733ca5e74fb3722f3229a5ae055508da82b338b3",
+                "revision": "9951511e213741b18de71264f22be1392163428e",
                 "version": "0.2.0"
             }
         },
