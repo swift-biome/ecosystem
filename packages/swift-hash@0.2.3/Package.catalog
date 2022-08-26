@@ -1,0 +1,45 @@
+[
+    {
+        "brand": "Swift Hash",
+        "catalog_tools_version": 3,
+        "modules": [
+            {
+                "dependencies": [],
+                "include": [
+                    "Base16"
+                ],
+                "module": "Base16"
+            },
+            {
+                "dependencies": [
+                    {
+                        "modules": [
+                            "Base16"
+                        ],
+                        "package": "swift-hash"
+                    }
+                ],
+                "include": [
+                    "CRC"
+                ],
+                "module": "CRC"
+            },
+            {
+                "dependencies": [
+                    {
+                        "modules": [
+                            "Base16"
+                        ],
+                        "package": "swift-hash"
+                    }
+                ],
+                "include": [
+                    "SHA2"
+                ],
+                "module": "SHA2"
+            }
+        ],
+        "package": "swift-hash",
+        "snippets": []
+    }
+]

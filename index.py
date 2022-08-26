@@ -79,6 +79,20 @@ packages = (
         )
     ),
     (
+        'https://github.com/kelvin13', 'swift-hash', 'Swift Hash',
+        (
+            (
+                semver('0.2.3'), 
+                (
+                    'Base16',
+                    'CRC',
+                    'SHA2',
+                ),
+                ()
+            ),
+        )
+    ),
+    (
         'https://github.com/apple', 'swift-system', 'SwiftSystem',
         (
             (

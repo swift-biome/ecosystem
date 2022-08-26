@@ -1,0 +1,23 @@
+{
+    "pins": [
+        {
+            "identity": "swift-hash",
+            "kind": "remoteSourceControl",
+            "location": "https://github.com/kelvin13/swift-hash",
+            "state": {
+                "revision": "e66010cb5921192af16e50270dea859047719c47",
+                "version": "0.2.3"
+            }
+        },
+        {
+            "identity": "swift-package-catalog",
+            "kind": "remoteSourceControl",
+            "location": "https://github.com/kelvin13/swift-package-catalog",
+            "state": {
+                "revision": "6e71dba093cf72a8a697309401ef5be52d42ddf3",
+                "version": "0.4.0"
+            }
+        }
+    ],
+    "version": 2
+}
