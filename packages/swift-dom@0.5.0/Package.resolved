@@ -5,7 +5,7 @@
             "kind": "remoteSourceControl",
             "location": "https://github.com/kelvin13/swift-dom",
             "state": {
-                "revision": "650fe5252f523dfea4771fbae4268215928becb7",
+                "revision": "0a62acc4e73d37d09d997a6272041c6d97d67bc6",
                 "version": "0.5.0"
             }
         },
