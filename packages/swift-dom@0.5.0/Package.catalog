@@ -1,0 +1,59 @@
+[
+    {
+        "brand": "Swift DOM",
+        "catalog_tools_version": 3,
+        "modules": [
+            {
+                "dependencies": [],
+                "include": [
+                    "DOM"
+                ],
+                "module": "DOM"
+            },
+            {
+                "dependencies": [
+                    {
+                        "modules": [
+                            "DOM"
+                        ],
+                        "package": "swift-dom"
+                    }
+                ],
+                "include": [
+                    "HTML"
+                ],
+                "module": "HTML"
+            },
+            {
+                "dependencies": [
+                    {
+                        "modules": [
+                            "DOM"
+                        ],
+                        "package": "swift-dom"
+                    }
+                ],
+                "include": [
+                    "RSS"
+                ],
+                "module": "RSS"
+            },
+            {
+                "dependencies": [
+                    {
+                        "modules": [
+                            "DOM"
+                        ],
+                        "package": "swift-dom"
+                    }
+                ],
+                "include": [
+                    "SVG"
+                ],
+                "module": "SVG"
+            }
+        ],
+        "package": "swift-dom",
+        "snippets": []
+    }
+]

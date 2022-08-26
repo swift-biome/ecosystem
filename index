@@ -3,6 +3,7 @@ ecosystem/packages/swift-grammar@0.1.5
 ecosystem/packages/swift-grammar@0.2.0
 ecosystem/packages/swift-json@0.2.2
 ecosystem/packages/swift-json@0.3.0
+ecosystem/packages/swift-dom@0.5.0
 ecosystem/packages/swift-atomics@1.0.2
 ecosystem/packages/swift-numerics@1.0.2
 ecosystem/packages/swift-collections@1.0.2

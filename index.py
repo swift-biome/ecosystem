@@ -64,6 +64,21 @@ packages = (
         )
     ),
     (
+        'https://github.com/kelvin13', 'swift-dom', 'Swift DOM',
+        (
+            (
+                semver('0.5.0'), 
+                (
+                    'DOM',
+                    'HTML',
+                    'RSS',
+                    'SVG',
+                ),
+                ()
+            ),
+        )
+    ),
+    (
         'https://github.com/apple', 'swift-system', 'SwiftSystem',
         (
             (
