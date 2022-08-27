@@ -55,7 +55,7 @@ packages = (
                 ()
             ),
             (
-                semver('0.3.0', revision = '48ab4fc74c9b1800f481b246dc382c7d9fa522bf'), 
+                semver('0.3.0', revision = '3f62c133b96f39289c880f40ce3dce446b025eef'), 
                 (
                     'JSON',
                 ),
@@ -442,6 +442,19 @@ packages = (
             ),
             (
                 semver('7.2.1'), 
+                (
+                    'MongoCore',
+                    'MongoKitten',
+                    'MongoClient',
+                    'Meow',
+                ),
+                (
+                    'MongoKittenCore',
+                    '_MongoKittenCrypto',
+                )
+            ),
+            (
+                semver('7.2.2'), 
                 (
                     'MongoCore',
                     'MongoKitten',

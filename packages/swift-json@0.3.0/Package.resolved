@@ -14,7 +14,7 @@
             "kind": "remoteSourceControl",
             "location": "https://github.com/kelvin13/swift-json",
             "state": {
-                "revision": "48ab4fc74c9b1800f481b246dc382c7d9fa522bf",
+                "revision": "3f62c133b96f39289c880f40ce3dce446b025eef",
                 "version": "0.3.0"
             }
         },
